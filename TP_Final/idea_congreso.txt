@@ -1,0 +1,31 @@
+Basandonos en
+- Paper EUA
+- Paper "que tan bien funciona el congreso"
+- Paper de votaciones en brasil
+
+Queremos analizar la evolucion de las votaciones en el congreso (diputados y senadores)
+
+Posibles analisis:
+* Red bipartita donde cada afiliacion es una ley y cada enlace un 1/0/-1
+
+* Identificacion de clusters y comunidades:
+	ver si hay una grieta "visible" entre partidos
+	ver si podemos identificar partidos con ideologias alineadas
+
+* cuantificacion de "Homofilia"
+	cross party agreement a lo largo del tiempo
+
+* cuantificacion de "asortatividad"
+	identificar los senadores/diputados que mas votan a favor/en contra de leyes dentro y fuera de su partido
+	ver correlacion con partido, genero, provincia, edad
+
+* Analisis de deteccion de topicos
+	ver si hay leyes particulares en las que hay mas o menos polarizacion y si eso tiene que ver con la cobertura mediatica
+	ver si podemos analizar el texto de las leyes (o limitar al titulo) y relacionarlo con el resultado de la votacion (polarizado/unanime)
+
+
+Dificultades:
+* Armado de la red
+* frentes que se arman y desarman
+* obtencion de datos sobre los senadores/diputados
+* recambio de diputados/senadores

@@ -1,0 +1,9 @@
+API senadores: 
+https://votaciones.hcdn.gob.ar/desarrolladores/
+
+Datos depurados de 2003 a 2012
+http://blog.congresointeractivo.org/dataset-todas-las-votaciones-del-congreso-2001-2013/
+
+Decada votada:
+http://www.decadavotada.com.ar/archive-s.html
+https://github.com/congresointeractivo/decadavotada
