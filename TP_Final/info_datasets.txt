@@ -1,9 +1,19 @@
-API senadores: 
+API diputados: (con información desde 1993) 
 https://votaciones.hcdn.gob.ar/desarrolladores/
 
-Datos depurados de 2003 a 2012
+Dataset oficial (con info desde 2011)
+https://datos.hcdn.gob.ar/dataset?groups=votaciones
+
+Datos depurados de 2003 a 2012 (es lo mismo de andy tow pero desactualizado)
 http://blog.congresointeractivo.org/dataset-todas-las-votaciones-del-congreso-2001-2013/
 
-Decada votada:
+Decada votada: (2004-2018 S 1995-2018 D)
 http://www.decadavotada.com.ar/archive-s.html
 https://github.com/congresointeractivo/decadavotada
+zip:  https://decadavotada.andytow.com/doc.html
+
+El trabajo de seykron, donde tenés en archivos zip alguna información scrappeada en 2014, no tengo claro desde cuándo 
+https://github.com/seykron/ogov-data
+
+El trabajo de Enresto Calvo, tiene cosas más viejas recuperadas a mano,su dataset aquí 
+http://gvptsites.umd.edu/calvo/Legislators Success-Replication Material.html
