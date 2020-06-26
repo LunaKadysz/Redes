@@ -1,0 +1,233 @@
+Componente 0:
+        AL. H. T. E. (Socialista)
+        FREPASO
+        A.R.I
+        Partido Socialista
+        Frente Grande
+        Mov. Peronista
+        U. Socialista
+        Frente para la Victoria - PJ
+        Justicialista
+        Frente Nueva Dirigencia
+        Coalición Cívica - ARI - GEN - UPT
+        Coalición Cívica
+        Unión por Todos
+        Unión PRO
+        Demócrata Cristiano
+        Demócrata Cristiano Federal
+        Corriente Grande
+        Intransigente
+        Partido Intransigente
+        Unión Centro Democrático
+        Peronista Federal
+        Justicialista Nacional
+        Frente Renovador
+        Independiente
+        MODIN
+        Mov. Azul y Blanco
+        P.A.I.S.
+        Unión Cívica Radical
+        Alianza
+        Buenos Aires
+        La Argentina de los Valores
+        Frente Popular Bonaerense
+        Movimiento Nacional Alfonsinista
+        Frente Cívico Social
+        Unión por Córdoba
+        Nuevo Espacio Entrerriano
+        Concertación Entrerriana
+        Movimiento Popular Jujeño
+        No Integra Bloque
+        Movimiento de Renovacion Civica
+        Politica Abierta
+        Cruzada Renovadora
+        Peronista Salteño
+        Peronista
+        Partido Conservador Popular
+        Demócrata Progresista
+        Participación y Justicia
+        Peronismo Federal
+        Frente Peronista
+        PRO
+        F.F.J. Azul y Blanco
+        Compromiso para el Cambio
+        Propuesta Republicana
+        Partido Unidad Federalista
+        Nacional Sindical
+        A.R.I Autónomo 8 +
+        Solidaridad e Igualdad (SI) - ARI (T.D.F)
+        Solidaridad e Igualdad (SI) - Proyecto P
+        Solidaridad e Igualdad (SI)
+        Nuevo Encuentro
+        Frente Nuevo Encuentro
+        Solidario SI
+        Federal Unidos por una Nueva Argentina
+        El Chacho
+        Fuerza Porteña
+        Encuentro
+        Frente Cívico por Santiago
+        Fuerza Republicana
+        Partido Comunista
+        Coalición Cívica - ARI
+        Coalición Cívica - ARI - UNEN
+        Encuentro Popular
+        Frente para el Cambio
+        Frente del Movimiento Popular
+        Linea Abierta
+        Trabajo y Dignidad
+        Republicano Democrático
+        U. Ce. De.
+        Encuentro Popular y Social
+        Nuevo Encuentro Popular y Solidario
+        GEN
+        Bloque GEN
+        Soberania Popular
+        Frente Cívico y Social de Catamarca
+        Acción por la República
+        Frente Justicia Unión y Libertad
+        Mov. Social Entrerriano
+        Ricardo Balbin
+        Partido Socialista Popular
+        Federal
+        Recrear para el Crecimiento
+        SI por la Unidad Popular
+        Unidad Popular
+        Unidad para el Desarrollo Social y la Equidad
+        U.B.
+        Unidad Bonaerense
+        Unidad Federalista
+        Juntos por Argentina
+        Frente de Todos
+        MO.RE.CI
+        Peronismo Popular
+        Unión Peronista
+        Movimiento Pampa Sur
+        Santa Fe Federal
+        Unión por Argentina
+        Movimiento Cívico y Social
+        Partido Demócrata por la Capital Federal
+        Demócrata de Capital Federal
+        Compromiso Federal
+        Autodeterminación y Libertad
+        Bloque Unipersonal
+        Convergencia
+        Fe
+        Democracia Igualitaria y Participativa
+        Frente Polo Social
+        Polo Social
+        M.M.T.A.
+        Socialismo Popular
+        Renovador de Salta
+        Eva Perón
+        Propuesta Peronista
+        Recrear
+        Proyecto Social Alternativo
+        Red de Encuentro Social
+        Emancipación y Justicia
+        Proyecto Sur
+        Bs. As. para Todos en Proyecto Sur
+        Movimiento Proyecto Sur
+        Partido de la Revolución Democrática
+        Diálogo por Buenos Aires
+        Dignidad y Justicia
+        Unión Celeste y Blanca
+        Unión Celeste y Blanco
+        Nucleo Unidad Peronista
+        Frente Cívico - Córdoba
+        Partido Nuevo Contra la Corrupción
+        Alianza Frente Alternatva Pampeana
+        Vida y Compromiso
+        Avanzar San Luis
+        Frente Cívico Tucumán
+        Recrear -- Tucumán
+        Frente por los Derechos Ciudadanos
+        Movimiento Independiente
+        Peronismo para la Victoria
+        Guardia Peronista
+        Frente Cívico y Social
+        Bloque por la Verdad
+        Partido Nuevo
+        Memoria y Democracia
+        Dignidad Peronista
+        De la Concertación
+        Frente Prog. Cívico y Social
+        Justicialismo Republicano
+        Proyecto Progresista
+        Mov. de Bases Independientes
+        Unidad Justicialista
+        Partido de la Concertación - FORJA
+        Valores para mi País
+        Buenos Aires por el Cambio
+        Consenso Federal
+        Corriente Peronista Federal
+        Corriente de Pensamiento Federal
+        Libres del Sur
+        Convergencia Federal
+        Unión por Entre Ríos
+        Peronismo Jujeño
+        Frente Renovador de la Concordia Misiones
+        Frente para la Victoria - Partido Bloqui
+        Bloquista de San Juan
+        Peronismo mas al Sur
+        Bloque Social Patagónico
+        Proyecto Sur - UNEN
+        Unidos por una Nueva Argentina
+        Bloque Unipersonal Cultura, Educación y Trabajo
+        Cultura, Educación y Trabajo
+        Somos Mendoza
+        Del Frente de la Concordia Misionero
+        Libertad y Democracia
+        Libertad, Valores y Cambios
+        Unión por San Juan
+        Santa Fe en Movimiento
+        Del Bicentenario
+        Peronista Córdoba Ciudadana
+        Frente Renovador Peronista
+        Socialista del MIJD
+        Frente por la Inclusión Social
+        UNIR
+        SUMA + UNEN
+        Evolución Radical
+        Bloque de los Trabajadores
+        Renovador Social Cristiano
+        Social Cristiano
+        Frente Norte
+        Partido Justicialista La Pampa
+        Conservador Popular
+        BG Juan B. Bustos
+        Diálogo y Trabajo
+        Córdoba Federal
+        Córdoba Trabajo y Producción
+        Chubut Somos Todos
+        Frente de la Concordia Misionero
+        Primero Argentina
+Componente 1:
+        Alianza Acción Chaqueña
+        Acción Chaqueña
+Componente 2:
+        lzquierda Unida
+        Izquierda Unida
+Componente 3:
+        F.I.S.CA.L
+        Participación Ciudadana
+Componente 4:
+        Frente Proyecto Corrientes
+        Proyecto Corrientes
+Componente 5:
+        Demócrata
+        Demócrata de Mendoza
+Componente 6:
+        Partido Liberal de Corrientes
+        Liberal de Corrientes
+Componente 7:
+        U.De.So.
+        U.De.So. Salta
+Componente 8:
+        Primero Tucumán
+        Justicialista por Tucumán
+Componente 9:
+        Compromiso con San Juan
+        Somos San Juan
+Componente 10:
+        Partido Intransigente de Mendoza
+        Protectora
