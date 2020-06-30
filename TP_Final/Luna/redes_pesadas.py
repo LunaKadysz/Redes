@@ -45,7 +45,7 @@ for i,anio in enumerate(anios_elecciones_legislativas):
         df_periodo = pd.concat([df[df['ano'] == anio],df[df['ano'] == anio+1]]) #busco los datos de un periodo (2 anios)
         axs[i].set_title(f'Periodo {anio} - {anio+1}')
     
-    dict_enlaces_periodo_i = f.enlaces_por_sesion(df_periodo) #funcion que devuelve los enlaces en dict
+    dict_enlaces_periodo_i,nodos = f.enlaces_por_sesion(df_periodo) #funcion que devuelve los enlaces en dict
     red_periodo_i = f.red_pesada(dict_enlaces_periodo_i)
     posiciones = nx.spring_layout(red_periodo_i)
     #posiciones =nx.spectral_layout(red_periodo_i, weight='weight')
