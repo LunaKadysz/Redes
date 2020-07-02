@@ -31,6 +31,7 @@ class ProcesadorDeVotaciones:
               ###validarvotacion(votacion)
               for vote_json in voting_list:
                   congress.add_votes(vote_json, year, month)
+      return congress
 
     def _get_vote(self, year, month):
        path = f'{self.folder}/{year}/{month}'

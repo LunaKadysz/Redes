@@ -6,7 +6,7 @@ class TheCongress:
 
     def __init__(self):
         self.representatives = []
-        self.years = []
+        self.years = {}
         self.parties = []
 
     def add_votes(self, vote_json, year, month):
@@ -14,6 +14,9 @@ class TheCongress:
         voting_title = vote_json['titulo']
         voting_type = vote_json['tipo_mayoria_texto']
         voting = Voting(year, month, id, voting_title, voting_type)
+        actual = self.years.get(year, [])
+        actual.append(voting)
+        self.years[year] = actual
         for a_vote in vote_json['votos']:
             person_id = a_vote['diputado_id']
             name = a_vote['diputado_nombre']
