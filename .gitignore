@@ -1,3 +1,5 @@
 .ipynb_checkpoints
 /TP_Final/DecadaVotada
+*__pycache__*
 /TP_Final/jsons
+*data*
