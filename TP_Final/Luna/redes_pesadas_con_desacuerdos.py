@@ -32,14 +32,14 @@ df = pd.merge(df,asuntos,left_on = 'asuntoId',right_on = 'asuntoId')
 
 anios_elecciones_legislativas = np.insert(np.arange(1994,2019,2),0,1993) #anios pares + 1995 
 anios_elecciones_legislativas = np.array([1993,1994])
-fig, axs = plt.subplots(1, 2, figsize=(15,15))
+fig, axs = plt.subplots(1, 2, figsize=(20,15))
 axs = axs.flatten()
 
 for i,anio in enumerate(anios_elecciones_legislativas):
     if anio == 1993:
          df_periodo = df[df['ano'] == anio]
          axs[i].set_title(f'Periodo {anio}')
-    if anio == 2018:
+    elif anio == 2018:
         df_periodo = df[df['ano'] == anio] 
         axs[i].set_title(f'Periodo {anio}')
          
@@ -53,7 +53,7 @@ for i,anio in enumerate(anios_elecciones_legislativas):
     red_desacuerdos_i = f.red_desacuerdos(dict_sesiones_desacuerdo)
     red_final_i = f.red_pesada_con_desacuerdos(red_acuerdos_i,red_desacuerdos_i,nodos)
 
-    red_cortada = disparity_filter.cut_graph(red_final_i)
+    red_cortada = disparity_filter.cut_graph(red_final_i, save = True, name=f'grafo {anio}')
 
     posiciones = nx.spring_layout(red_cortada,weight='norm_weight')
     #posiciones =nx.spectral_layout(red_periodo_i, weight='weight')

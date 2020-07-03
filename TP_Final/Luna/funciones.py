@@ -10,7 +10,7 @@ import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
 from itertools import combinations
-
+import disparity_filter
 
 def enlaces_por_sesion(df):
     #itero la red segun la sesion (asunto)
@@ -27,9 +27,9 @@ def enlaces_por_sesion(df):
         #agrupo segun el voto (0 = Afirmativo, 1 = Negativo, 2 = Abstención, 3 = Ausente)
         #los ausentes no me interesan
         
-        afirmativo_sesion_i = sesion_i[sesion_i['voto'] == 1]
-        negativo_sesion_i = sesion_i[sesion_i['voto'] == 2]
-        abstencion_sesion_i = sesion_i[sesion_i['voto'] == 3]
+        afirmativo_sesion_i = sesion_i[sesion_i['voto'] == 0]
+        negativo_sesion_i = sesion_i[sesion_i['voto'] == 1]
+        abstencion_sesion_i = sesion_i[sesion_i['voto'] == 2]
         
         #print(afirmativo_sesion_i,negativo_sesion_i,abstencion_sesion_i)
         
@@ -45,7 +45,7 @@ def enlaces_por_sesion(df):
 
 
 
-def red_pesada(dict_sesiones):
+def red_acuerdos(dict_sesiones):
     Red = nx.Graph()
     #cant_sesiones = len(dict_sesiones)
     
@@ -87,7 +87,7 @@ def red_desacuerdos(dict_sesiones_desacuerdo): #red pesada cuyos enlaces son los
                 Red.add_edge(enlace[0],enlace[1], weight=1)
     return Red
 
-def red_pesada_con_desacuerdos(red_acuerdos,red_desacuerdos,nodos):
+def red_pesada_con_desacuerdos(red_acuerdos,red_desacuerdos,nodos,save=True,name= 'grafo'):
     Red = nx.Graph()
     enlaces_totales = list(combinations(nodos,2))
     
@@ -104,6 +104,8 @@ def red_pesada_con_desacuerdos(red_acuerdos,red_desacuerdos,nodos):
         elif red_desacuerdos.has_edge(enlace[0],enlace[1]): #si no existe el enlace en la red de acuerdos y si en la de des
             peso = -red_desacuerdos[enlace[0]][enlace[1]]['weight']
             Red.add_edge(enlace[0],enlace[1], weight=peso)
+    if save:
+        disparity_filter.save_graph(Red, f'{name}_con_desacuerdos')
     
     return Red
             
