@@ -28,7 +28,6 @@ class ProcesadorDeVotaciones:
       for year in range(self.begin, self.end + 1):
           for month in range(1, 12 + 1):
               voting_list = self._get_vote(year, month)
-              ###validarvotacion(votacion)
               for vote_json in voting_list:
                   congress.add_votes(vote_json, year, month)
       return congress
@@ -67,3 +66,5 @@ class ProcesadorDeVotaciones:
                    json.dump(response, json_file)
                data.append(response)
            return data
+
+       def _validate(self, voting_list, validation):

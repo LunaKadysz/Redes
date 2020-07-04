@@ -13,3 +13,10 @@ class Representative:
 
     def add_party(self, party, year):
         self.parties[year] = party
+
+    def get_attributes(self, year):
+        return {'party': self.parties[year]}
+
+    def was_in_year(self, year):
+        if self.parties.get(year):
+            return True

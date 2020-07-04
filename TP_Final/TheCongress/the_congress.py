@@ -6,17 +6,18 @@ class TheCongress:
 
     def __init__(self):
         self.representatives = []
-        self.years = {}
+        self.votings = {}
         self.parties = []
 
     def add_votes(self, vote_json, year, month):
         id = vote_json['id']
         voting_title = vote_json['titulo']
         voting_type = vote_json['tipo_mayoria_texto']
-        voting = Voting(year, month, id, voting_title, voting_type)
-        actual = self.years.get(year, [])
+        result = vote_json['resultado_texto']
+        voting = Voting(year, month, id, voting_title, voting_type, result)
+        actual = self.votings.get(year, [])
         actual.append(voting)
-        self.years[year] = actual
+        self.votings[year] = actual
         for a_vote in vote_json['votos']:
             person_id = a_vote['diputado_id']
             name = a_vote['diputado_nombre']
@@ -35,6 +36,10 @@ class TheCongress:
             vote = a_vote['voto_texto']
             representative.add_vote(voting, vote)
             voting.add_representative(representative, vote)
+
+    def get_yearly_representatives(self, year):
+        return [repr for repr in self.representatives if repr.was_in_year(year)]
+
 
     def _get_representative(self, person_id,name, last_name, state):
         for representative in self.representatives:
