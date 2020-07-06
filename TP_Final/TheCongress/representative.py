@@ -20,3 +20,18 @@ class Representative:
     def was_in_year(self, year):
         if self.parties.get(year):
             return True
+
+    def __eq___(self, other):
+        self._validate(other)
+        return self.id == other.id
+
+    def __lt__(self, other):
+        self._validate(other)
+        return self.id < other.id
+
+    def __gt__(self, other):
+        self._validate(other)
+        return self.id > other.id
+
+    def _validate(self, other):
+        assert type(self) == type(other), f'{type(other)} is not a Representative!'

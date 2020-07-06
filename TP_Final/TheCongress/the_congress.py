@@ -23,6 +23,8 @@ class TheCongress:
             name = a_vote['diputado_nombre']
             last_name = a_vote['diputado_apellido']
             state = a_vote['provincia_texto']
+            if person_id == None:
+                print(vote_json['id'])
 
             representative = self._get_representative(person_id, name, last_name, state)
 

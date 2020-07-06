@@ -1,9 +1,9 @@
 class Voting:
 
-    AFIMATIVO = 'AFIMATIVO'
-    NEGATIVO = 'NEGATIVO'
-    ABSTENCION = 'ABSTENCION'
-    AUSENTE = 'AUSENTE'
+    """ 'AFIRMATIVO' = 'AFIRMATIVO'
+    'NEGATIVO' = 'NEGATIVO'
+    'ABSTENCION' = 'ABSTENCION'
+    'AUSENTE' = 'AUSENTE' """ 
 
     def __init__(self, year, month, id, vote_title, voting_type, result):
         self.year = year
@@ -15,10 +15,10 @@ class Voting:
         self._create_vote_dict()
 
     def _create_vote_dict(self):
-        self.votos = {AFIMATIVO: [], NEGATIVO: [], ABSTENCION: [], AUSENTE: []}
+        self.votos = {'AFIRMATIVO': [], 'NEGATIVO': [], 'ABSTENCION': [], 'AUSENTE': []}
 
     def add_representative(self, representative, vote):
         self.votos[vote].append(representative)
 
     def get_voters(self):
-        return self.votos[AFIRMATIVO] + self.votos[NEGATIVO] + self.votos[ABSTENCION]
+        return self.votos['AFIRMATIVO'] + self.votos['NEGATIVO'] + self.votos['ABSTENCION']
