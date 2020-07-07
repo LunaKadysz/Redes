@@ -1,3 +1,4 @@
+from collections import defaultdict
 class Representative:
 
     def __init__(self, id, name, last_name, state):
@@ -11,8 +12,16 @@ class Representative:
     def add_vote(self, voting, vote):
         self.votes[voting] = vote
 
-    def add_party(self, party, year):
-        self.parties[year] = party
+    def add_party(self, party, year, month):
+        if self.parties.get(year, None):
+            if party not in self.parties[year] and month == 12:
+                self.parties.get(year + 1, set()).add(party)
+            else:
+                self.parties[year].add(party)
+        else:
+            self.parties[year] = set()
+            self.parties[year].add(party)
+
 
     def get_attributes(self, year):
         return {'party': self.parties[year]}

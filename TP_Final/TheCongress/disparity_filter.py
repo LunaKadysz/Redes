@@ -47,7 +47,7 @@ class DisparityFilter:
 
             for edge, weight in weights.items():
                 if node_id in edge: #para los edges del nodo
-                    norm_weight = self._get_norm_weight()
+                    norm_weight = self._get_norm_weight(strength, weight, degree)
 
                 if degree > 1:
                     alpha = self._get_disparity_significance(norm_weight, degree)
@@ -62,8 +62,9 @@ class DisparityFilter:
 
 
     def _get_sorted_alphas(self):
-        alphas = self._get_network_alphas()
-        return sorted(alphas.items(), key=lambda x: x[1], reverse=True)
+        alphas, weights = self._get_network_alphas()
+        sorted_alphas = sorted(alphas.items(), key=lambda x: x[1], reverse=True)
+        return sorted_alphas, weights
 
     def _remove_highest_alpha(self, alphas, weights):
         edge, _ = alphas[0]

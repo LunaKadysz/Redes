@@ -26,7 +26,7 @@ class ProcesadorDeVotaciones:
     def procesar(self):
       congress = TheCongress()
       for year in range(self.begin, self.end + 1):
-          for month in range(1, 12):
+          for month in range(1, 12 + 1):
               voting_list = self._get_vote(year, month)
               for vote_json in voting_list:
                   congress.add_votes(vote_json, year, month)

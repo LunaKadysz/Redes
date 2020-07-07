@@ -16,7 +16,7 @@ class RepresentativesGraph():
         self.graph.add_edge(node_1, node_2, weight = weight)
 
     def get_sorted_edges_weights(self):
-        original_weights = nx.get_edge_attributes(self.network, 'weight')
+        original_weights = nx.get_edge_attributes(self.graph, 'weight')
         weights = {}
         for k in original_weights.keys():
             weights[tuple(sorted(k, reverse = True))] = original_weights[k]
@@ -36,4 +36,4 @@ class RepresentativesGraph():
         return gc, size_gc
 
     def remove_edge(self, edge):
-        self.graph.remove_edge(edge)
+        self.graph.remove_edge(edge[0],edge[1])
