@@ -35,17 +35,20 @@ class HeavyGraphMaker:
         self.weights = HeavyGraphMaker.DEFINED_WEIGHTS if not config else self._load_config(config)
 
 
-    def create_year_network(self, year):
+    def create_year_network(self, *years):
+        representatives = set()
+        votings = []
+        for year in years:
+            votings.extend(self.congress.votings[year])
+            representatives.update(self.congress.get_yearly_representatives(year))
 
-        representatives = self.congress.get_yearly_representatives(year)
-        votings = self.congress.votings[year]
-        network = RepresentativesGraph(representatives, year)
-
+        network = RepresentativesGraph(representatives, years)
         for repr_1, repr_2 in combinations(representatives, 2):
             weight = self._define_weight(repr_1, repr_2, votings)
             network.add_edge(repr_1, repr_2, weight)
 
         return network
+
 
     def create_voting_network(self, voting):
 

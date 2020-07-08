@@ -2,18 +2,26 @@ import networkx as nx
 
 class RepresentativesGraph():
 
-    def __init__(self, representatives, year):
+    def __init__(self, representatives, *years):
         self.representatives = representatives
-        self._create_networkx_graph(year)
+        self._create_networkx_graph(years)
 
-    def _create_networkx_graph(self, year):
+    def _create_networkx_graph(self, *years):
         self.graph = nx.Graph()
         self.graph.add_nodes_from(self.representatives)
-        attr_dict = {repr: repr.get_attributes(year) for repr in self.representatives}
+        attr_dict = {repr: self._get_attr(repr, years) for repr in self.representatives}
         nx.set_node_attributes(self.graph, attr_dict)
 
     def add_edge(self, node_1, node_2, weight):
         self.graph.add_edge(node_1, node_2, weight = weight)
+
+    def _get_attr(self, repr, *years):
+        attr = {}
+        for year in years:
+            if repr.was_in_year(year):
+                attr = repr.get_attributes(year)
+
+        return attr
 
     def get_sorted_edges_weights(self):
         original_weights = nx.get_edge_attributes(self.graph, 'weight')
