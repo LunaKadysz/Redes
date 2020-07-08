@@ -31,11 +31,12 @@ class DisparityFilter:
         return strength
 
     def _get_norm_weight(self, strength, weight, degree):
+        if strength == 0:
+            strength = 1
         norm_weight = weight / strength
         if  norm_weight == 1.0: #no diverja la integral
-            return norm_weight - 0.001
+            return norm_weight - 0.01
         return norm_weight
-
 
     def _get_network_alphas(self):
         weights = self.network.get_sorted_edges_weights()
@@ -74,7 +75,7 @@ class DisparityFilter:
         return size_gc, alphas, edge, {'weight': weights[edge]}
 
 
-    def cut_graph(self, GC_limit_size = 0.9):
+    def cut_graph(self, GC_limit_size = 0.8):
         alpha_measures, weights = self._get_sorted_alphas()
         gc, size_gc = self.network.gigant_component()
 
