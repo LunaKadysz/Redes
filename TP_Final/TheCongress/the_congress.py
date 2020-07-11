@@ -89,4 +89,4 @@ class TheCongress:
         if not self.votings.get(year + 1):
             self.votings[year + 1] = votings_to_change
         else:
-            self.votings[year + 1] + to_change
+            self.votings[year + 1].extend(to_change)
