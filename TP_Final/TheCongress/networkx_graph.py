@@ -1,6 +1,17 @@
 import networkx as nx
+import dill
 
-class RepresentativesGraph():
+class RepresentativesGraph:
+
+    @classmethod
+    def save_graph_object(cls, grafo, file_name):
+        with open(file_name, 'wb') as file:
+            dill.dump(grafo, file)
+
+    @classmethod
+    def load_graph_object(cls, file_name):
+        with open(file_name, 'rb') as file:
+            return dill.load(file)
 
     def __init__(self, representatives, *years):
         self.representatives = representatives
