@@ -13,18 +13,20 @@ class Representative:
         self.votes[voting] = vote
 
     def add_party(self, party, year, month):
-        if self.parties.get(year, None):
-            if party not in self.parties[year] and month == 12:
-                self.parties.get(year + 1, set()).add(party)
+        if month == 12:
+            if party not in self.parties.get(year, set()):
+                self.parties[year + 1] = set()
+                self.parties[year + 1].add(party)
             else:
+                self.parties[year] = set()
                 self.parties[year].add(party)
+
         else:
             self.parties[year] = set()
             self.parties[year].add(party)
 
-
     def get_attributes(self, year):
-        return {'party': self.parties[year]}
+        return {'party': self.parties.get(year)}
 
     def was_in_year(self, year):
         if self.parties.get(year):
