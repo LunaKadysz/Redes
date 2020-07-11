@@ -78,10 +78,15 @@ class TheCongress:
         return votings_to_change
 
     def _reloc_votings(self):
+        to_change = []
         for year, voting_list in self.votings.items():
             votings_to_change = self._votings_to_change(year)
             for voting in votings_to_change:
                 print(f'Changing vote {voting.id} in {year} to {year + 1}')
                 voting.set_legislative_year(voting, year + 1)
                 self.votings[year].remove(voting)
-                self.votings[year + 1].append(voting)
+                to_change.append(voting)
+        if not self.votings.get(year + 1):
+            self.votings[year + 1] = votings_to_change
+        else:
+            self.votings[year + 1] + to_change
