@@ -36,7 +36,7 @@ class HeavyGraphMaker:
         self.weights = HeavyGraphMaker.DEFINED_WEIGHTS if not config else self._load_config(config)
 
 
-    def move_weights(self, network, *years):
+    def _move_weights(self, network, *years):
         old_weights = network.get_sorted_edges_weights()
         min_weight = min(old_weights.values())
         print(f'Min weight was {min_weight}')
@@ -65,7 +65,7 @@ class HeavyGraphMaker:
                 network.add_edge(repr_1, repr_2, weight)
 
         if move_zero:
-            self.move_weights(network, *years)
+            self._move_weights(network, *years)
 
         return network
 
