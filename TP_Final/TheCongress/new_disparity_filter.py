@@ -44,7 +44,7 @@ class NewDisparityFilter():
             print(f'That limit is impossible! Min alpha is {min_alpha}')
             return
         if alpha_t > max_alpha:
-            print(f'That limit is impossible! Max alpha is {max_a}')
+            print(f'That limit is impossible! Max alpha is {max_alpha}')
             return
 
         i = 0

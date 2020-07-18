@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Jul 18 01:13:19 2020
+
+@author: carolina
+"""
+
+import networkx as nx
 from procesador_votaciones import ProcesadorDeVotaciones
 from heavy_graph_maker import HeavyGraphMaker
 
@@ -25,13 +34,6 @@ for item in Negative_config:
 #network= HeavyGraphMaker(congress).create_year_network(2019)
 network_pos = HeavyGraphMaker(congress, config=Positive_config).create_year_network(2019)
 network_neg = HeavyGraphMaker(congress, config=Negative_config).create_year_network(2019)
-
-import networkx as nx
-from disparity_filter import DisparityFilter
-#network_cut=DisparityFilter(network).cut_graph(alpha_limit=0.05)
-
-network_pos_cut= DisparityFilter(network_pos).cut_graph(alpha_limit=0.05)
-network_neg_cut= DisparityFilter(network_neg).cut_graph(alpha_limit=0.05)
 
 from new_disparity_filter import NewDisparityFilter
 #network_cut2=NewDisparityFilter(network).alpha_cut()
