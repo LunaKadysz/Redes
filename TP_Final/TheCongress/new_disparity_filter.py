@@ -41,10 +41,10 @@ class NewDisparityFilter():
         print(f'Max alpha is {max_alpha}, min alpha is {min_alpha}')
 
         if alpha_t < min_alpha:
-            print(f'That limit is impossible! Min alpha is {alpha_measures[-1][1]}')
+            print(f'That limit is impossible! Min alpha is {min_alpha}')
             return
         if alpha_t > max_alpha:
-            print(f'That limit is impossible! Max alpha is {alpha_measures[0][1]}')
+            print(f'That limit is impossible! Max alpha is {max_a}')
             return
 
         i = 0
@@ -57,7 +57,7 @@ class NewDisparityFilter():
 
         print(f'{i} edges deleted, {total_edges - i} left')
         _, size_gc = self.network.gigant_component()
-        print(f' Gigant component is {size_gc} of the total')
+        print(f'Gigant component is {size_gc} of the total')
         return self.network
 
 
@@ -75,4 +75,4 @@ class NewDisparityFilter():
         return norm_weight
 
     def _get_disparity_parameter(self, norm_weight, degree):
-        return 1 - (degree - 1) * integrate.quad(lambda x: (1 - x)**(degree - 2), 0, norm_weight)[0]
+        return (1 - norm_weight) ** (degree - 1)
