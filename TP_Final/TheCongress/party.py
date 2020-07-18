@@ -1,9 +1,9 @@
 class Party:
 
     def __init__(self, id, text):
-      self.id = id
-      self.text = text
-      self.representatives = {}
+        self.id = id
+        self.text = text
+        self.representatives = {}
 
 
     def add_representative(self, representative, year, month):
