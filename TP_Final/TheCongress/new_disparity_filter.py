@@ -1,6 +1,5 @@
 import decimal
 decimal.getcontext().prec = 100
-from scipy import integrate
 import numpy as np
 
 class NewDisparityFilter():
@@ -52,7 +51,8 @@ class NewDisparityFilter():
             if alpha > alpha_t:
                 self.network.remove_edge(edge)
                 i += 1
-                print(f'Enlaces sacados: {i}')
+                if i%1000 ==0:
+                    print(f'Enlaces sacados: {i}')
 
 
         print(f'{i} edges deleted, {total_edges - i} left')
