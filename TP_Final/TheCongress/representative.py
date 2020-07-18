@@ -36,10 +36,18 @@ class Representative:
         return hash((self.id, self.name, self.last_name))
 
     def __eq__(self, other):
-        return self.__class__ == other.__class__ and self.id == other.id and self.name == other.name and self.last_name == other.last_name and self.votes == other.votes
+        return (self.__class__ == other.__class__ and
+                self.id == other.id and
+                self.name == other.name and
+                self.last_name == other.last_name and
+                self.votes == other.votes)
 
     def __lt__(self, other):
+        if not self.__class__ == other.__class__:
+            raise NotImplementedError('It is not the same class. You cannot compare!')
         return self.id < other.id
 
     def __gt__(self, other):
+        if not self.__class__ == other.__class__:
+            raise NotImplementedError('It is not the same class. You cannot compare!')
         return self.id > other.id
