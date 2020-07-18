@@ -65,8 +65,11 @@ class RepresentativesGraph:
     def remove_edge(self, edge):
         self.graph.remove_edge(edge[0],edge[1])
 
-    def get_edges(self):
-        return self.graph.edges()
+    def get_edges(self, data = None):
+        return self.graph.edges(data = data)
+
+    def add_edges_from_list(self, list_of_edges):
+        self.graph.add_edges_from(list_of_edges)
 
     def copy(self):
         copy = RepresentativesGraph(self.representatives, None)
