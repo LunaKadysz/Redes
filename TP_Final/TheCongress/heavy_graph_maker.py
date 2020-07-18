@@ -14,7 +14,7 @@ class HeavyGraphMaker:
         ('NEGATIVO', 'AFIRMATIVO'): -1,
         ('NEGATIVO', 'NEGATIVO'): 1,
         ('NEGATIVO', 'ABSTENCION'): -1,
-        ('NEGATIVO', 'AUSENTE'): -1,
+        ('NEGATIVO', 'AUSENTE'): 0,
 
         ('ABSTENCION', 'AFIRMATIVO'): -1,
         ('ABSTENCION', 'NEGATIVO'): -1,
@@ -84,7 +84,7 @@ class HeavyGraphMaker:
 
     def _define_weight(self, repr_1, repr_2, voting_list, *years):
         ###TODO: si la config dice que 2/3 vale +++
-        #le hacemos get y si no lo encuentra lo toma ausente (por si se murio o renuncio)
+        #le hacemos get y si no lo encuentra lo toma ausente
         return sum([self.weights[(repr_1.votes.get(voting, 'AUSENTE'), repr_2.votes.get(voting, 'AUSENTE'))]
                     for voting in voting_list])
 
