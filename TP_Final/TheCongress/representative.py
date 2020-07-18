@@ -32,17 +32,14 @@ class Representative:
         if self.parties.get(year):
             return True
 
-    def __eq___(self, other):
-        self._validate(other)
-        return self.id == other.id
+    def __hash__(self):
+        return hash((self.id, self.name, self.last_name))
+
+    def __eq__(self, other):
+        return self.__class__ == other.__class__ and self.id == other.id and self.name == other.name and self.last_name == other.last_name and self.votes == other.votes
 
     def __lt__(self, other):
-        self._validate(other)
         return self.id < other.id
 
     def __gt__(self, other):
-        self._validate(other)
         return self.id > other.id
-
-    def _validate(self, other):
-        assert type(self) == type(other), f'{type(other)} is not a Representative!'

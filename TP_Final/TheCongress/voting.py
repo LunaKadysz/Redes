@@ -33,3 +33,9 @@ class Voting:
     def set_legislative_year(self, voting, year):
         self.legislative_year = year
         self.legislative_month = 0
+
+    def __hash__(self):
+        return hash((self.id, self.year))
+
+    def __eq__(self, other):
+        return self.id == other.id and self.year == other.year and len(self.votos['AFIRMATIVO']) == len(other.votos['AFIRMATIVO']) and len(self.votos['NEGATIVO']) == len(other.votos['NEGATIVO']) and len(self.votos['AUSENTE']) == len(other.votos['AUSENTE']) and len(self.votos['ABSTENCION']) == len(other.votos['ABSTENCION'])
