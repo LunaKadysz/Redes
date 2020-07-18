@@ -89,4 +89,4 @@ class HeavyGraphMaker:
                     for voting in voting_list])
 
     def _load_config(self, config):
-        raise NotImplementedError
+        return config
