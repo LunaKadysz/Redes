@@ -19,13 +19,16 @@ class RepresentativesGraph:
 
     def __init__(self, representatives, *years):
         self.representatives = representatives
-        self._create_networkx_graph(years)
+        self._create_networkx_graph(*years)
+        self.years = []
+        for year in years:
+            self.years.append(year)
 
     def _create_networkx_graph(self, *years):
         self.graph = nx.Graph()
         self.graph.add_nodes_from(self.representatives)
         if years:
-            attr_dict = {repr: self._get_attr(repr, years) for repr in self.representatives}
+            attr_dict = {repr: self._get_attr(repr, *years) for repr in self.representatives}
             nx.set_node_attributes(self.graph, attr_dict)
 
     def add_edge(self, node_1, node_2, weight):
@@ -46,11 +49,23 @@ class RepresentativesGraph:
             weights[tuple(sorted(k, reverse = True))] = original_weights[k]
         return weights
 
+    def get_node_attr(self, attribute):
+        return nx.get_node_attributes(self.graph, attribute)
+
+    def get_edge_attr(self, attribute):
+        return nx.get_edge_attributes(self.graph, attribute)
+
     def set_edge_attributes(self, attr_dict, name):
         nx.set_edge_attributes(self.graph, attr_dict, name)
 
+    def set_node_attributes(self, attr_dict, name):
+        nx.set_node_attributes(self.graph, attr_dict, name)
+
     def get_nodes(self):
         return self.graph.nodes()
+
+    def shortest_path(self, initial_node):
+        nx.shortest_path(self.graph, source = initial_node, weight = 'weight')
 
     def degree(self, node_id):
         return self.graph.degree(node_id)
