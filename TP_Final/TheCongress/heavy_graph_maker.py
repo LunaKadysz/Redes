@@ -54,7 +54,7 @@ class HeavyGraphMaker:
             votings.extend(self.congress.votings[year])
             representatives.update(self.congress.get_yearly_representatives(year))
 
-        network = RepresentativesGraph(representatives, years)
+        network = RepresentativesGraph(representatives, *years)
         for repr_1, repr_2 in combinations(representatives, 2):
             weight = self._define_weight(repr_1, repr_2, votings, *years)
             if positive and weight > 0:
