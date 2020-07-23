@@ -55,7 +55,7 @@ class NewDisparityFilter():
                     print(f'Enlaces sacados: {i}')
 
 
-        print(f'{i} edges deleted, {total_edges - i} left')
+        print(f'{i} edges deleted, {total_edges - i} left. {( 1 - round(i/total_edges, 3)) * 100}% left.')
         _, size_gc = self.network.gigant_component()
         print(f'Gigant component is {size_gc} of the total')
         return self.network
