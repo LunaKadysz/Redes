@@ -31,7 +31,7 @@ class NewDisparityFilter():
 
         return alphas
 
-    def alpha_cut(self, alpha_t = 0.05):
+    def alpha_cut(self, alpha_t = 0.05, return_data = False):
         alphas_dict = self._get_network_alphas()
         total_edges = len(alphas_dict)
         print(f'The graph has {total_edges} edges')
@@ -55,10 +55,17 @@ class NewDisparityFilter():
                     print(f'Enlaces sacados: {i}')
 
 
-        print(f'{i} edges deleted, {total_edges - i} left. {( 1 - round(i/total_edges, 3)) * 100}% left.')
+        print(f'{i} edges deleted, {total_edges - i} left. {round( (1 - i/total_edges) * 100, 3)}% left.')
         _, size_gc = self.network.gigant_component()
         print(f'Gigant component is {size_gc} of the total')
-        return self.network
+        if return_data:
+            data = {}
+            data['Edges deleted'] = i
+            data['Percentaje left'] = {round( (1 - i/total_edges) * 100, 3)}
+            return self.network, data
+
+        else:
+            return self.network
 
 
     def _get_node_strength(self, node_id, weights):
