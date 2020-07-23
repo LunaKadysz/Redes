@@ -8,7 +8,7 @@ class NewDisparityFilter():
 
     def __init__(self, network, max_alpha = None):
 
-        self.network = network
+        self.network = network.copy()
         self.max_alpha = NewDisparityFilter.MAX_ALPHA if not max_alpha else max_alpha
 
     def _get_network_alphas(self):
@@ -23,11 +23,11 @@ class NewDisparityFilter():
                 if node_id in edge: #para los edges del nodo
                     p_ij = self._get_norm_weight(strength, weight, degree)
 
-                if degree > 1:
-                    alpha = self._get_disparity_parameter(p_ij, degree)
-                    old_alpha = alphas[edge]
-                    if old_alpha > alpha:
-                        alphas[edge] = alpha
+                    if degree > 1:
+                        alpha = self._get_disparity_parameter(p_ij, degree)
+                        old_alpha = alphas[edge]
+                        if old_alpha > alpha:
+                            alphas[edge] = alpha
 
         return alphas
 
