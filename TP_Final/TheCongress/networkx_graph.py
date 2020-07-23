@@ -64,8 +64,8 @@ class RepresentativesGraph:
     def get_nodes(self):
         return self.graph.nodes()
 
-    def shortest_path(self, initial_node):
-        nx.shortest_path(self.graph, source = initial_node, weight = 'weight')
+    def shortest_path(self, initial_node, target_node = None, weight = 'weight'):
+        return nx.shortest_path(self.graph, source = initial_node, target = target_node, weight = weight)
 
     def degree(self, node_id):
         return self.graph.degree(node_id)
@@ -73,9 +73,11 @@ class RepresentativesGraph:
     def gigant_component(self):
         components=[self.graph.subgraph(component) for component
                     in sorted(nx.connected_components(self.graph), key=len, reverse=True)]
-        gc = components[0]
-        size_gc = gc.number_of_nodes() / self.graph.number_of_nodes()
-        return gc, size_gc
+        gc_networkx = components[0]
+        representatives_gc = RepresentativesGraph(list(gc_networkx.nodes()), *self.years)
+        representatives_gc.graph = gc_networkx
+        size_gc = gc_networkx.number_of_nodes() / self.graph.number_of_nodes()
+        return representatives_gc, size_gc
 
     def remove_edge(self, edge):
         self.graph.remove_edge(edge[0],edge[1])
