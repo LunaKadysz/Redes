@@ -70,14 +70,15 @@ class HeavyGraphMaker:
         return network
 
 
-    def create_voting_network(self, voting, positive = None, negative = None):
+    def create_voting_network(self, voting, year, positive = None, negative = None):
 
         representatives = voting.get_voters()
         network = RepresentativesGraph(representatives, year)
 
         for repr_1, repr_2 in combinations(representatives, 2):
             weight = self._define_weight(repr_1, repr_2, [voting])
-            network.add_edge(repr_1, repr_2, weight)
+            if positive and weight > 0:
+                network.add_edge(repr_1, repr_2, weight)
 
         return network
 
